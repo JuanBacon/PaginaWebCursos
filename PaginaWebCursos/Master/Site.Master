@@ -8,7 +8,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %> - Virtual Class.NET</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -16,16 +16,19 @@
     <!-- Compiled and minified CSS -->
     <link href="../Content/materialize.min.css" rel="stylesheet" />
 
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <style>
+        .navbar-inverse .navbar-nav > li > a {
+            color:#171616;
+        }
+    </style>
 </head>
-<body>
+<body style="background-image:url(../Assets/fondo.jpg); background-size:cover; background-attachment:scroll; font-family:Lato">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -48,21 +51,17 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="top: 0; margin-top: 0px; background-color:#2222220d; border:0;">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Cursos Web</a>
+                    <img id="logo" src="../Assets/logo.png" class="left" style="width:40px; height:40px"/>
+                    <a class="navbar-brand left" runat="server" style="color:whitesmoke; font-size:large" href="~/">Virtual Class</a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
+                <div class="navbar-collapse collapse" >
+                    <ul class="nav navbar-nav right">
+                        <li><a runat="server" style="font-size:larger" href="~/">Inicio</a></li>
+                        <li><a runat="server" style="font-size:larger" href="~/About">Acerca de</a></li>
+                        <li><a runat="server" style="font-size:larger" href="~/Contact">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -70,11 +69,33 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
-            </footer>
+
+            
         </div>
+        <footer class="page-footer red darken-2 z-depth-3" style="position:absolute; bottom:0;width: -webkit-fill-available; height:200px;">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright  red darken-4 z-depth-3" >
+            <div class="container">
+             <p class="grey-text text-lighten-4">La educación del futuro</p>
+            <p>&copy; <%: DateTime.Now.Year %> - Virtual Class.NET</p>
+            </div>
+          </div>
+        </footer>
 
     </form>
 </body>
